@@ -2,7 +2,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- open file manager
-vim.keymap.set("n", "<leader>pv", vim.cmd.xplr)
+vim.keymap.set("n", "<leader>pv", vim.cmd.Xplr)
 
 -- swapline
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = 'move line down' })
