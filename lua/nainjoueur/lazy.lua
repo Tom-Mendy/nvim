@@ -132,6 +132,7 @@ require('lazy').setup({
       -- Icons for lualine
       'kyazdani42/nvim-web-devicons',
     },
+    main = "ibl",
     opts = {
       options = {
         icons_enabled = false,
