@@ -86,12 +86,13 @@ vim.keymap.set("n", "<leader>tt", "<cmd>vsplit term://zsh<CR>a", { desc = '[T]og
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = 'escape terminal' })
 
 -- switch window terminal mode
-vim.keymap.set("t", "<A-h>", "<C-\\><C-N><C-w>h", { desc = 'escape terminal' })
-vim.keymap.set("t", "<A-j>", "<C-\\><C-N><C-w>j", { desc = 'escape terminal' })
-vim.keymap.set("t", "<A-k>", "<C-\\><C-N><C-w>k", { desc = 'escape terminal' })
-vim.keymap.set("t", "<A-l>", "<C-\\><C-N><C-w>l", { desc = 'escape terminal' })
+vim.keymap.set("t", "<A-h>", "<C-\\><C-N><C-w>h", { desc = 'move left in terminal mode' })
+vim.keymap.set("t", "<A-j>", "<C-\\><C-N><C-w>j", { desc = 'move down in terminal mode' })
+vim.keymap.set("t", "<A-k>", "<C-\\><C-N><C-w>k", { desc = 'move up in terminal mode' })
+vim.keymap.set("t", "<A-l>", "<C-\\><C-N><C-w>l", { desc = 'move right in terminal mode' })
 
 -- switch window normal mode
-vim.keymap.set("n", "<A-h>", "<C-\\><C-N><C-w>h", { desc = 'escape terminal' })
-vim.keymap.set("n", "<A-j>", "<C-\\><C-N><C-w>j", { desc = 'escape terminal' })
-vim.keymap.set("n", "<A-k>", "<C-\\><C-N><C-w>k", { desc = 'escape terminal' })
+vim.keymap.set("n", "<A-h>", "<C-\\><C-N><C-w>h", { desc = 'move left in normal mode' })
+vim.keymap.set("n", "<A-j>", "<C-\\><C-N><C-w>j", { desc = 'move down in normal mode' })
+vim.keymap.set("n", "<A-k>", "<C-\\><C-N><C-w>k", { desc = 'move up in normal mode' })
+vim.keymap.set("n", "<A-l>", "<C-\\><C-N><C-w>l", { desc = 'move right in normal mode' })
