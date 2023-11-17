@@ -82,3 +82,16 @@ vim.keymap.set("n", "<leader>pl", "<cmd>Neotree last<CR>", { desc = '[P]roject [
 -- vim.tnoremap.set("<Esc>", '<C-\\><C-n>')
 -- autocmd VimEnter * ++nested split term://sh
 vim.keymap.set("n", "<leader>tt", "<cmd>vsplit term://zsh<CR>a", { desc = '[T]oggle [T]erm' })
+
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = 'escape terminal' })
+
+-- switch window terminal mode
+vim.keymap.set("t", "<A-h>", "<C-\\><C-N><C-w>h", { desc = 'escape terminal' })
+vim.keymap.set("t", "<A-j>", "<C-\\><C-N><C-w>j", { desc = 'escape terminal' })
+vim.keymap.set("t", "<A-k>", "<C-\\><C-N><C-w>k", { desc = 'escape terminal' })
+vim.keymap.set("t", "<A-l>", "<C-\\><C-N><C-w>l", { desc = 'escape terminal' })
+
+-- switch window normal mode
+vim.keymap.set("n", "<A-h>", "<C-\\><C-N><C-w>h", { desc = 'escape terminal' })
+vim.keymap.set("n", "<A-j>", "<C-\\><C-N><C-w>j", { desc = 'escape terminal' })
+vim.keymap.set("n", "<A-k>", "<C-\\><C-N><C-w>k", { desc = 'escape terminal' })
