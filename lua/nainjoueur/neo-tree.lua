@@ -228,6 +228,7 @@ require("neo-tree").setup({
     group_empty_dirs = true,     -- when true, empty folders will be grouped together
     show_unloaded = true,
     window = {
+      mappings = {
         ["bd"] = "buffer_delete",
         ["<bs>"] = "navigate_up",
         ["."] = "set_root",
