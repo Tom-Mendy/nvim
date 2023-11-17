@@ -22,26 +22,26 @@ require('lazy').setup({
 
   -- Git related plugins
   'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
-
-  -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
-
-  'jiangmiao/auto-pairs',
-  'numToStr/comment.nvim',
-
-  'mbbill/undotree',
-
   'tpope/vim-surround',
   'tpope/vim-obsession',
-  'tpope/vim-fugitive',
+  'tpope/vim-rhubarb',
 
-  -- file manager plugin
-  'is0n/fm-nvim',
+  -- detect tabstop and shiftwidth automatically
+  'tpope/vim-sleuth',
+
+  'numtostr/comment.nvim',
+
+  'mbbill/undotree',
 
   -- markdown preview
   'iamcco/markdown-preview.nvim',
 
+  "rcarriga/nvim-notify",
+
+  "mfussenegger/nvim-dap",
+  "rcarriga/nvim-dap-ui",
+
+  "HiPhish/rainbow-delimiters.nvim",
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -158,7 +158,7 @@ require('lazy').setup({
     opts = {
       -- add any options here
     },
-    lazy = false,
+    lazy = true,
   },
 
   -- Fuzzy Finder (files, lsp, etc)
@@ -187,14 +187,79 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
+      'nvim-treesitter/nvim-treesitter-context',
     },
     build = ':TSUpdate',
   },
+  {
+    "ecthelionvi/NeoView.nvim",
+    opts = {}
+  },
 
   {
-    'goolord/alpha-nvim',
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+      {
+        's1n7ax/nvim-window-picker',
+        version = '2.*',
+        config = function()
+          require 'window-picker'.setup({
+            filter_rules = {
+              include_current_win = false,
+              autoselect_one = true,
+              -- filter using buffer options
+              bo = {
+                -- if the file type is one of following, the window will be ignored
+                filetype = { 'neo-tree', "neo-tree-popup", "notify" },
+                -- if the buffer type is one of following, the window will be ignored
+                buftype = { 'terminal', "quickfix" },
+              },
+            },
+          })
+        end,
+      },
+    }
+  },
+  {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
     config = function()
-      require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
-    end
+      require('dashboard').setup {
+      }
+    end,
+    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+  },
+  {
+    'stevearc/conform.nvim',
+    opts = {},
+  },
+  {
+    'akinsho/bufferline.nvim',
+    version = "*",
+    dependencies = 'nvim-tree/nvim-web-devicons'
+  },
+  {
+    'akinsho/toggleterm.nvim',
+    version = "*",
+    config = true
+  },
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    ---@type Flash.Config
+    opts = {},
+    -- stylua: ignore
+    keys = {
+      { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
+      { "S",     mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
+      { "r",     mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
+      { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
+    },
   },
 }, {})

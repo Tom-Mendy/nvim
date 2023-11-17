@@ -1,12 +1,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- open file manager
-vim.keymap.set("n", "<leader>pv", function()
-  vim.cmd('cd %:p:h')
-  vim.cmd('Xplr')
-end)
-
 -- swapline
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = 'move line down' })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = 'move line up' })
@@ -41,26 +35,25 @@ vim.keymap.set("i", "Jk", "<Esc>")
 vim.keymap.set("i", "Kj", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = 'Format' })
+vim.keymap.set("n", "<leader>bf", vim.lsp.buf.format, { desc = '[B]uffer [F]ormat' })
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = '<cmd>lnext<CR>zz' })
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = '<cmd>lprev<CR>zz' })
 
-vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'rename all word' })
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = 'chmod +x' })
+vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = '[R]ename [W]ords' })
+vim.keymap.set("n", "<leader>bx", "<cmd>!chmod +x %<CR>", { silent = true, desc = '[B]ufffer +[x]' })
 
-vim.keymap.set("n", "<leader><leader>", function()
+vim.keymap.set("n", "<leader>bs", function()
   vim.cmd("so")
 end)
 
--- fugitive
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git);
+-- git status
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = '[G]it [S]tatus' })
 
 -- undotree
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = '[U]ndotree [T]oggle' })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -72,3 +65,19 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
+-- open file manager
+vim.keymap.set("n", "<leader>pv", function()
+  vim.cmd('cd %:p:h')
+  vim.cmd('Explore')
+end)
+
+vim.keymap.set("n", "<leader>pf", "<cmd>Neotree filesystem<CR>", { desc = '[P]roject [F]filesystem' })
+vim.keymap.set("n", "<leader>pb", "<cmd>Neotree buffers<CR>", { desc = '[P]roject [B]uffers' })
+vim.keymap.set("n", "<leader>pg", "<cmd>Neotree git_status<CR>", { desc = '[P]roject [G]it' })
+vim.keymap.set("n", "<leader>pl", "<cmd>Neotree last<CR>", { desc = '[P]roject [L]ast' })
+
+-- https://neovim.io/doc/user/nvim_terminal_emulator.html
+-- vim.tnoremap.set("<Esc>", '<C-\\><C-n>')
+-- autocmd VimEnter * ++nested split term://sh
+vim.keymap.set("n", "<leader>tt", "<cmd>vsplit term://zsh<CR>", { desc = '[T]oggle [T]erm' })

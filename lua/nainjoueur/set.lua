@@ -7,6 +7,7 @@ vim.opt.mouse = 'a'
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+-- Make 4 space indent default
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -16,6 +17,7 @@ vim.opt.expandtab = true
 vim.opt.breakindent = true
 vim.opt.smartindent = true
 
+-- Disable wrap line
 vim.opt.wrap = false
 
 vim.opt.swapfile = false
@@ -24,7 +26,7 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 -- Set highlight on search
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.splitright = true
@@ -34,11 +36,9 @@ vim.opt.termguicolors = true
 vim.opt.background = "dark"
 
 vim.opt.scrolloff = 8
+-- Keep signcolumn on by default
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
-
--- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
 
 -- Decrease update time
 vim.opt.updatetime = 250
