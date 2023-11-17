@@ -25,14 +25,15 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = 'Delete whithout put
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
+-- JK
 vim.keymap.set("i", "jk", "<Esc>l")
-vim.keymap.set("i", "kj", "<Esc>")
+vim.keymap.set("i", "kj", "<Esc>l")
 vim.keymap.set("i", "JK", "<Esc>l")
-vim.keymap.set("i", "KJ", "<Esc>")
-vim.keymap.set("i", "jK", "<Esc>")
-vim.keymap.set("i", "kJ", "<Esc>")
-vim.keymap.set("i", "Jk", "<Esc>")
-vim.keymap.set("i", "Kj", "<Esc>")
+vim.keymap.set("i", "KJ", "<Esc>l")
+vim.keymap.set("i", "jK", "<Esc>l")
+vim.keymap.set("i", "Kj", "<Esc>l")
+vim.keymap.set("i", "Jk", "<Esc>l")
+vim.keymap.set("i", "kJ", "<Esc>l")
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>bf", vim.lsp.buf.format, { desc = '[B]uffer [F]ormat' })
@@ -80,4 +81,4 @@ vim.keymap.set("n", "<leader>pl", "<cmd>Neotree last<CR>", { desc = '[P]roject [
 -- https://neovim.io/doc/user/nvim_terminal_emulator.html
 -- vim.tnoremap.set("<Esc>", '<C-\\><C-n>')
 -- autocmd VimEnter * ++nested split term://sh
-vim.keymap.set("n", "<leader>tt", "<cmd>vsplit term://zsh<CR>", { desc = '[T]oggle [T]erm' })
+vim.keymap.set("n", "<leader>tt", "<cmd>vsplit term://zsh<CR>a", { desc = '[T]oggle [T]erm' })
