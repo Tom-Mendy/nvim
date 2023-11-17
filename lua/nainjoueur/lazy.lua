@@ -38,8 +38,12 @@ require('lazy').setup({
 
   "rcarriga/nvim-notify",
 
+  -- DAP
   "mfussenegger/nvim-dap",
   "rcarriga/nvim-dap-ui",
+
+  -- Linter
+  'mfussenegger/nvim-lint',
 
   "HiPhish/rainbow-delimiters.nvim",
   {
@@ -116,11 +120,13 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    -- Theme
+    "folke/tokyonight.nvim",
+    lazy = false,
     priority = 1000,
+    opts = {},
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme 'tokyonight'
     end,
   },
 
@@ -135,7 +141,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'tokyonight',
         component_separators = '|',
         section_separators = '',
       },
@@ -242,11 +248,6 @@ require('lazy').setup({
     'akinsho/bufferline.nvim',
     version = "*",
     dependencies = 'nvim-tree/nvim-web-devicons'
-  },
-  {
-    'akinsho/toggleterm.nvim',
-    version = "*",
-    config = true
   },
   {
     "folke/flash.nvim",
