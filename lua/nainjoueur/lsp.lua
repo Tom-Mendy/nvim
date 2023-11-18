@@ -57,7 +57,14 @@ local servers = {
   rust_analyzer = {},
   tsserver = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
-  lua_ls = {},
+  lua_ls = {
+    Lua = {
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = { 'vim' },
+      },
+    },
+  },
 }
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers

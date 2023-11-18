@@ -46,6 +46,11 @@ require('lazy').setup({
   'mfussenegger/nvim-lint',
 
   "HiPhish/rainbow-delimiters.nvim",
+
+  "xiyaowong/transparent.nvim",
+
+  'rmagatti/auto-session',
+
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -234,10 +239,6 @@ require('lazy').setup({
   {
     'nvimdev/dashboard-nvim',
     event = 'VimEnter',
-    config = function()
-      require('dashboard').setup {
-      }
-    end,
     dependencies = { { 'nvim-tree/nvim-web-devicons' } }
   },
   {
@@ -262,14 +263,5 @@ require('lazy').setup({
       { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
       { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
     },
-  },
-  {
-    'rmagatti/auto-session',
-    config = function()
-      require("auto-session").setup {
-        log_level = "error",
-        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-      }
-    end
   },
 }, {})

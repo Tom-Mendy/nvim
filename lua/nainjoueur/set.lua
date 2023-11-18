@@ -33,7 +33,6 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 vim.opt.termguicolors = true
-vim.opt.background = "dark"
 
 vim.opt.scrolloff = 8
 -- Keep signcolumn on by default
