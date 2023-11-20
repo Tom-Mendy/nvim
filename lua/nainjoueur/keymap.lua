@@ -71,7 +71,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.keymap.set("n", "<leader>pv", function()
   vim.cmd('cd %:p:h')
   vim.cmd('Explore')
-end)
+end, { desc = '[P]roject [V]ue' })
 
 vim.keymap.set("n", "<leader>pf", "<cmd>Neotree filesystem<CR>", { desc = '[P]roject [F]filesystem' })
 vim.keymap.set("n", "<leader>pb", "<cmd>Neotree buffers<CR>", { desc = '[P]roject [B]uffers' })
@@ -82,6 +82,9 @@ vim.keymap.set("n", "<leader>pl", "<cmd>Neotree last<CR>", { desc = '[P]roject [
 -- vim.tnoremap.set("<Esc>", '<C-\\><C-n>')
 -- autocmd VimEnter * ++nested split term://sh
 vim.keymap.set("n", "<leader>tt", "<cmd>vsplit term://zsh<CR>a", { desc = '[T]oggle [T]erm' })
+
+-- delete buffer
+vim.keymap.set("n", "<leader>bd", "<cmd>bd<CR>", { desc = '[B]uffer [D]elete' })
 
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = 'escape terminal' })
 

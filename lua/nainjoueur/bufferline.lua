@@ -32,17 +32,17 @@ bufferline.setup({
 for i = 1, 9 do
   vim.keymap.set("n", "<leader>" .. i, function()
     require("bufferline").go_to(i, true)
-  end)
+  end, { desc = 'Open buffer nb ...' })
 end
 
 vim.keymap.set("n", "<leader>" .. 0, function()
   require("bufferline").go_to(-1, true)
-end)
+end, { desc = 'Open last buffer' })
 
 vim.keymap.set("n", "<leader>h", function()
   require("bufferline").cycle(-1)
-end)
+end, { desc = 'Open left buffer' })
 
 vim.keymap.set("n", "<leader>l", function()
   require("bufferline").cycle(1)
-end)
+end, { desc = 'Open right buffer' })
