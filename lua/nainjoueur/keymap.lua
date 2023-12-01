@@ -73,10 +73,11 @@ vim.keymap.set("n", "<leader>pv", function()
   vim.cmd('Explore')
 end, { desc = '[P]roject [V]ue' })
 
-vim.keymap.set("n", "<leader>pf", "<cmd>NvimTreeFocus<CR>", { desc = '[P]roject [F]filesystem' })
-vim.keymap.set("n", "<leader>pb", "<cmd>Neotree buffers<CR>", { desc = '[P]roject [B]uffers' })
-vim.keymap.set("n", "<leader>pg", "<cmd>Neotree git_status<CR>", { desc = '[P]roject [G]it' })
-vim.keymap.set("n", "<leader>pl", "<cmd>Neotree last<CR>", { desc = '[P]roject [L]ast' })
+
+vim.keymap.set("n", "<leader>pf", function()
+  vim.cmd('cd %:p:h')
+  vim.cmd('NvimTreeFocus')
+end, { desc = '[P]roject [F]ilesystem' })
 
 -- https://neovim.io/doc/user/nvim_terminal_emulator.html
 vim.keymap.set("n", "<leader>tt", "<cmd>vsplit term://zsh<CR>a", { desc = '[T]oggle [T]erm' })
