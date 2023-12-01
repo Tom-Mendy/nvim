@@ -73,14 +73,12 @@ vim.keymap.set("n", "<leader>pv", function()
   vim.cmd('Explore')
 end, { desc = '[P]roject [V]ue' })
 
-vim.keymap.set("n", "<leader>pf", "<cmd>Neotree filesystem<CR>", { desc = '[P]roject [F]filesystem' })
+vim.keymap.set("n", "<leader>pf", "<cmd>NvimTreeFocus<CR>", { desc = '[P]roject [F]filesystem' })
 vim.keymap.set("n", "<leader>pb", "<cmd>Neotree buffers<CR>", { desc = '[P]roject [B]uffers' })
 vim.keymap.set("n", "<leader>pg", "<cmd>Neotree git_status<CR>", { desc = '[P]roject [G]it' })
 vim.keymap.set("n", "<leader>pl", "<cmd>Neotree last<CR>", { desc = '[P]roject [L]ast' })
 
 -- https://neovim.io/doc/user/nvim_terminal_emulator.html
--- vim.tnoremap.set("<Esc>", '<C-\\><C-n>')
--- autocmd VimEnter * ++nested split term://sh
 vim.keymap.set("n", "<leader>tt", "<cmd>vsplit term://zsh<CR>a", { desc = '[T]oggle [T]erm' })
 
 -- delete buffer
