@@ -83,12 +83,21 @@ require('lazy').setup({
       'hrsh7th/cmp-nvim-lsp-document-symbol',
       'hrsh7th/cmp-nvim-lsp-signature-help',
 
-      -- Snippet Engine & its associated nvim-cmp source
+      -- For vsnip users.
+      'hrsh7th/cmp-vsnip',
+      'hrsh7th/vim-vsnip',
+
+      -- For luasnip users.
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip',
 
+      -- For snippy users.
+      'dcampos/nvim-snippy',
+      'dcampos/cmp-snippy',
+
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
+      'nvim-cmp',
     },
   },
 
