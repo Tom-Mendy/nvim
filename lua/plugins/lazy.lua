@@ -33,23 +33,40 @@ require('lazy').setup({
 
   'mbbill/undotree',
 
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  },
+
   -- markdown preview
   'iamcco/markdown-preview.nvim',
 
-  "rcarriga/nvim-notify",
-
   -- DAP
-  "mfussenegger/nvim-dap",
-  "rcarriga/nvim-dap-ui",
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }
+  },
 
   -- Linter
   'mfussenegger/nvim-lint',
 
   "HiPhish/rainbow-delimiters.nvim",
 
-  "xiyaowong/transparent.nvim",
-
   'rmagatti/auto-session',
+  lazy = false,
+  dependencies = {
+    'nvim-telescope/telescope.nvim', -- Only needed if you want to use sesssion lens
+  },
+  config = function()
+    require('auto-session').setup({
+      auto_session_suppress_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
+    })
+  end,
 
   {
     -- LSP Configuration & Plugins
@@ -109,7 +126,11 @@ require('lazy').setup({
       vim.o.timeout = true
       vim.o.timeoutlen = 300
     end,
-    opts = {}
+    opts = {},
+    dependencies = {
+      'echasnovski/mini.nvim',
+      'kyazdani42/nvim-web-devicons'
+    },
   },
 
   {
@@ -134,6 +155,18 @@ require('lazy').setup({
       end,
     },
   },
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",  -- required
+      "sindrets/diffview.nvim", -- optional - Diff integration
+
+      -- Only one of these is needed, not both.
+      "nvim-telescope/telescope.nvim", -- optional
+      "ibhagwan/fzf-lua",              -- optional
+    },
+    config = true
+  },
 
   {
     -- Theme
@@ -144,6 +177,22 @@ require('lazy').setup({
     config = function()
       vim.cmd.colorscheme 'tokyonight'
     end,
+  },
+
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+    }
   },
 
   {

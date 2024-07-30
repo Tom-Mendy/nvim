@@ -1,1 +1,3 @@
-require("nainjoueur")
+require("keymaps")
+require("option")
+require("plugins.lazy")

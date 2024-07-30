@@ -32,3 +32,4 @@ ibl.setup {
     remove_blankline_trail = false,
   },
 }
+
