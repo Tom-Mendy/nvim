@@ -33,6 +33,8 @@ require('lazy').setup({
 
   'mbbill/undotree',
 
+  { 'wakatime/vim-wakatime', lazy = false },
+
   {
     "christoomey/vim-tmux-navigator",
     cmd = {
