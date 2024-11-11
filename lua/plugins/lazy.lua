@@ -17,9 +17,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
 
-  -- epitech specific plugin
-  'Nero-F/epitech.nvim',
-
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-surround',
@@ -28,8 +25,6 @@ require('lazy').setup({
 
   -- detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
-
-  'numtostr/comment.nvim',
 
   'mbbill/undotree',
 
@@ -170,18 +165,6 @@ require('lazy').setup({
       end,
     },
   },
-  {
-    "NeogitOrg/neogit",
-    dependencies = {
-      "nvim-lua/plenary.nvim",  -- required
-      "sindrets/diffview.nvim", -- optional - Diff integration
-
-      -- Only one of these is needed, not both.
-      "nvim-telescope/telescope.nvim", -- optional
-      "ibhagwan/fzf-lua",              -- optional
-    },
-    config = true
-  },
 
   {
     -- Theme
@@ -192,22 +175,6 @@ require('lazy').setup({
     config = function()
       vim.cmd.colorscheme 'tokyonight'
     end,
-  },
-
-  {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    opts = {
-      -- add any options here
-    },
-    dependencies = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-      "MunifTanjim/nui.nvim",
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to use the notification view.
-      --   If not available, we use `mini` as the fallback
-      "rcarriga/nvim-notify",
-    }
   },
 
   {
@@ -291,11 +258,6 @@ require('lazy').setup({
     config = function()
       require("nvim-tree").setup {}
     end,
-  },
-  {
-    'nvimdev/dashboard-nvim',
-    event = 'VimEnter',
-    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
   },
   {
     'stevearc/conform.nvim',
