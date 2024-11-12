@@ -16,5 +16,4 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
-require("plugins.lazy")
-require("plugins.lualine")
+require("lazy").setup("plugins")
