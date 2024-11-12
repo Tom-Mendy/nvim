@@ -1,9 +1,7 @@
 return {
   -- Set lualine as statusline
   'nvim-lualine/lualine.nvim',
-  -- See `:help lualine.txt`
   dependencies = {
-    -- Icons for lualine
     'kyazdani42/nvim-web-devicons',
   },
   opts = {

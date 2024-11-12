@@ -7,7 +7,11 @@ return {
         "MunifTanjim/nui.nvim",
     },
     config = function()
-        vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal right<CR>", {})
+        vim.keymap.set("n", "<leader>pf", ":Neotree filesystem reveal right<CR>", { desc = '[P]roject [F]ilesystem' })
+        -- vim.keymap.set("n", "<leader>pf", function()
+        --     vim.cmd('cd %:p:h')
+        --     vim.cmd('NvimTreeFocus')
+        -- end, { desc = '[P]roject [F]ilesystem' })
 
         vim.api.nvim_create_autocmd("BufEnter", {
             pattern = "*",

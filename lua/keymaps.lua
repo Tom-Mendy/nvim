@@ -74,10 +74,6 @@ vim.keymap.set("n", "<leader>pv", function()
 end, { desc = '[P]roject [V]ue' })
 
 
-vim.keymap.set("n", "<leader>pf", function()
-  vim.cmd('cd %:p:h')
-  vim.cmd('NvimTreeFocus')
-end, { desc = '[P]roject [F]ilesystem' })
 
 -- https://neovim.io/doc/user/nvim_terminal_emulator.html
 vim.keymap.set("n", "<leader>tt", "<cmd>vsplit term://zsh<CR>a", { desc = '[T]oggle [T]erm' })
