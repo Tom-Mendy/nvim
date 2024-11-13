@@ -22,5 +22,27 @@ return {
                 end
             end,
         })
+        require("neo-tree").setup({
+            disable_netrw = true,
+            hijack_netrw = true,
+            open_on_setup = true,
+            auto_close = true,
+            update_focused_file = {
+                enable = true,
+                update_cwd = true,
+            },
+            view = {
+                width = 30,
+                side = "right",
+                auto_resize = false,
+            },
+            close_if_last_window = true,
+            filesystem = {
+                follow_current_file = {
+                    enabled = true,
+                    leave_dirs_open = true,
+                },
+            },
+        })
     end,
 }
