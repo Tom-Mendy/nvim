@@ -12,6 +12,7 @@ return {
         -- Additional lua configuration, makes nvim stuff amazing!
         "folke/neodev.nvim",
         "rshkarin/mason-nvim-lint",
+            "LittleEndianRoot/mason-conform",
     },
     config = function()
         require("neodev").setup()
@@ -118,5 +119,6 @@ return {
             end,
         })
         require("mason-nvim-lint").setup()
+        require("mason-conform").setup()
     end,
 }

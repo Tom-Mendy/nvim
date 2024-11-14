@@ -1,6 +1,5 @@
 # nvim
 
-
 ## Setup Copilot
 
 1. Install the Copilot plugin
