@@ -30,6 +30,7 @@ return {
 				scss = { "prettierd", "prettier" },
 				sh = { "shellcheck" },
 				go = { "gofmt", "goimports" },
+				nix = { "nixpkgs_fmt" },
 				-- Use the "*" filetype to run formatters on all filetypes.
 				["*"] = { "codespell" },
 				-- Use the "_" filetype to run formatters on filetypes that don't
